@@ -1,10 +1,15 @@
 # Five-Star_Game
-We are going to construct a Five-in-a-Row game website.
-## The intented functionality
+A Gomoku game website based on Flask backend website.
+![](./homepage.jpg)
+
+Author: Bill-Flash & anonymous
+## Features
 
 - The local mode of Five-in-a-Row game.
 1. User can play with their friends on the same window
 1. It doesn't need player to log in.
+![](./game.jpg)
+
 1. Their scores would not be recorded into the Rank list.
 - The online mode of Five-in-a-Row game.
 1. Users play online with the competitor from different windows.
@@ -15,10 +20,11 @@ We are going to construct a Five-in-a-Row game website.
 1. The past records show on the profile
 1. Editing thier information
 - Rank list and search functionality
-1. User could see Top 10 of players according to the rate
+1. User could see Top 10 of players according to the rate ![](./rank.jpg)
 1. User could search the username to find the specific user
 1. Logged-in user could see his/her Rank
 1. User could see players' profile by clicking their name
+![](./dashboard.jpg)
 - Game introduction
 1. The page used for who don't know the rules of Five-in-a-Row game.
 1. The page tells what user should do in different modes.
