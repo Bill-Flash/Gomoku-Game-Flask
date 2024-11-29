@@ -1,5 +1,5 @@
 # Five-Star_Game
-A Gomoku game website based on Flask backend website.
+A Gomoku game website based on Flask backend website, which could be played online or locally.
 ![](./homepage.jpg)
 
 Author: Bill-Flash & anonymous
