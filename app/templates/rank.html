@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block style%}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/rank.css') }}">
+<script src="{{ url_for('static', filename = 'script/check.js') }}"></script>
+{% endblock %}
+
+{% block form %}
+<div class="head">
+    <span class="rankhead">Ranking List</span>
+    &nbsp;&nbsp;&nbsp;
+    <!-- the search area -->
+    <div class="search">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <!-- Username -->
+
+            <span class="form">
+                {{ form.search }}
+            </span>
+
+            <span class="submit">
+                {{ form.submit }}
+            </span>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% block rank%}
+<!-- rank list -->
+<div class="rankbg">
+    <div class="ranklistbg">
+        <!--display top player's wins, losses, winning percentage and ranking-->
+        <table class="ranklist">
+        <thead>
+            <tr class="rankitem">
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Win</th>
+                <th>Lose</th>
+                <th>Draw</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for k, v in top.items() %}
+                {% if v[4] == 1 %}
+                    <tr class="rankitem1">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% elif v[4] == 2 %}
+                    <tr class="rankitem2">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% elif v[4] == 3 %}
+                        <tr class="rankitem3">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% else %}
+                    <tr class="rankitem">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% endif %}
+
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
+
+<!--display the user's wins, losses, winning percentage and ranking-->
+{% if session.get('USERNAME') %}
+<div class="mybg">
+    <table class="mylist">
+        {% for k, v in myRank.items() %}
+            <tr>
+
+                <td class="rank">{{ v[4] }}</td>
+                <td class="user">{{ k }}</td>
+                <td class="win">{{ v[0] }}</td>
+                <td class="lose">{{ v[1] }}</td>
+                <td class="draw">{{ v[2] }}</td>
+                <td class="rate">{{ v[3]*100 }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+{% endblock %}

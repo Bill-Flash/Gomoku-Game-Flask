@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{# this page is used to register #}
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+{% endblock %}
+{% block form %}
+<!-- In the register, we need Username, Password, Confirm -->
+    <div class="content-container">
+        <div class="subtitle">
+            <h1>Sign Up</h1>
+        </div>
+        <!-- the Enroll part, with WTForm and Flask Form -->
+        <div class="register-pane pane">
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+            <!-- Username -->
+            <div class="form-group">
+                {{ inputMust(form.username) }}
+                <p class="hint">Username starts with a letter, 4-15 characters allowed,
+                    only lowercase, uppercase letter and underscore(_) allowed</p>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                {{ inputMust(form.password) }}
+                <p class="hint">It can contain letters, digits, and special characters. 5-15 characters allowed.</p>
+            </div>
+            <!-- Confirm -->
+            <div class="form-group">
+                {{ inputMust(form.confirm) }}
+            </div>
+            <!-- Email Address -->
+            <div class="form-group">
+                {{ inputMust(form.emailA) }}
+            </div>
+            <!-- Register button-->
+            <div class="submit-container">
+                {{ form.submit }}
+            </div>
+
+            </form>
+            <!-- TC -->
+            <p class="term">
+                By clicking Register, I agree that I have read and accepted the <a class="notea" href="">Terms of use
+                and Conditions</a>.
+            </p>
+        </div>
+        <!-- the part that reminds user of straightly logging in -->
+        <p class="note">
+            Already have login and password? <a class="notea" href={{ url_for('log_on') }}>Sign in</a>!
+        </p>
+    </div>
+
+{% endblock %}

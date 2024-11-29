@@ -1,0 +1,52 @@
+/*The title of the page */
+.title{
+    color: #2f2f35;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 30px auto;
+    padding-top: 30px;
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+
+.titled{
+    color: #c4d7d6;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 30px auto;
+    padding-top: 30px;
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+
+/*The background */
+.indexbg{
+    background-color:rgba(45,46,54, 0.3);
+    width:600px;
+    height:max-content;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+/*Every item of the index page */
+.indexitem{
+    margin: 10px;
+    padding: 15px 0px;
+    width: 95%;
+    height: 50px;
+    background-color: rgba(115,124,123, 1);
+    color: #fffefa;
+    border: #c4d7d6 1px solid;
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+}
+    .indexitem:hover{
+        background-color: #c4d7d6;
+        color: #2f2f35;
+    }
+
+.indexherf{
+    color: #fffefa;
+}

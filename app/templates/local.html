@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{#refer to flask_chess on github by Kechi Zhang#}
+{% block style%}
+<script type="text/javascript" src="static/script/rulel.js" ></script>
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/wuzi.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- online mode game -->
+
+<div id="gzTitle">
+    <h1>Local Mode</h1>
+</div>
+<div id='main'>
+<div class="local">
+    <p class="ppl">{{msg|safe}}</p>
+    <br>
+
+</div>
+<div class="divcenter">
+    <div id="background">
+        <!--<div id="back_grid"></div>-->
+        <div id="chess"></div>
+    </div>
+</div>
+<div class="local">
+    <p class="ppl">{{message|safe}}</p>
+    <p id="turn" class="ppr"></p>
+
+</div>
+
+</div>
+
+
+{% endblock %}

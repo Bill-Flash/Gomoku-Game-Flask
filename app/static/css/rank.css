@@ -1,0 +1,181 @@
+.head{
+    width: 100%;
+    text-align:center;
+    margin: 1.5rem 1rem 0.5rem;
+}
+/*The search area */
+.search{
+    display: inline-block;
+}
+/*The input area */
+.form input{
+
+    border-radius: 5px;
+    border: #444950 1px solid;
+    height: 1.5rem;
+
+}
+
+.form input:focus-visible{
+    border-color: rgb(60, 219, 204);
+}
+/*The submit area */
+.submit input{
+
+    height: 1.5rem;
+    background-color: rgba(115,124,123, 1);
+    color: #fffefa;
+    border: #c4d7d6 0.5px solid;
+    border-radius: 5px;
+    font-size: 1rem;
+
+}
+.submit input:hover {
+    background-color: #c4d7d6;
+    color: #2f2f35;
+    cursor: pointer;
+}
+/*The title of the rank page */
+.rankhead{
+    font-size: 50px;
+    color:#c4d7d6;
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+/*The background 1 of the rank page */
+.rankbg{
+    background-color:rgba(45,46,54, 0.3);
+    width:800px;
+    height:max-content;
+    margin: 0 auto;
+    padding: 1rem 0rem;
+}
+/*The background 2 of the rank page */
+.ranklistbg{
+    background-color:#c4d7d6;
+    width:90%;
+    max-height:700px;
+    margin: 0 auto;
+    overflow: auto;
+}
+    .ranklistbg .note{
+        padding: 0.5rem;
+        margin: 1rem auto;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+/*The rank list of the rank page */
+/*background-image: linear-gradient(-20deg, #FAEBD7 0%, #FFDEAD 100%);*/
+.ranklist{
+    background-color:#c4d7d6;
+    width:100%;
+    height:auto;
+}
+    .ranklist tbody td, .mylist tbody td{
+        padding-left: 1rem;
+    }
+.rankitem{
+    width:100%;
+    height:60px;
+}
+
+.rankitem1{
+    background-image:linear-gradient(to right, #FFD700 0%, #FFFACD 100%);
+    width:100%;
+    height:60px;
+}
+
+.rankitem2{
+    background-image:linear-gradient(to right, #C0C0C0 0%, #F5F5F5 100%);
+    width:100%;
+    height:60px;
+}
+
+.rankitem3{
+    background-image:linear-gradient(to right, #DAA520 0%, #F5DEB3 100%);
+    width:100%;
+    height:60px;
+}
+table tbody tr:nth-child(odd){
+    background-color: #b1bec7;
+}
+.rank{
+    width:10%;
+}
+
+.user{
+    color:#2b333e;
+    width:50%;
+}
+
+.win{
+    color:#5e5314;
+    width:10%;
+}
+
+.lose{
+    color:#5e5314;
+    width:10%;
+}
+
+.draw{
+    color:#5e5314;
+    width:10%;
+}
+
+.rate{
+    color:#5e5314;
+    width:10%;
+}
+/*The user's rank information */
+.mybg{
+    background-color:rgba(45,46,54, 0.3);
+    width:800px;
+    height:80px;
+    margin: 0 auto;
+}
+
+.mylist{
+    background-color:#c4d7d6;
+    width:90%;
+    height:80%;
+    margin: 0 auto;
+}
+
+.myitem{
+    width:100%;
+    height:100%;
+}
+
+.toggle{
+    background-color: #e7f0fd;
+    position: absolute;
+    max-width: 15em;
+    height: max-content;
+    padding: 1rem;
+    top: -2rem;
+    left: 4rem;
+    border-radius: 20%;
+    border: #89b8a2 1px solid;
+    z-index: 10;
+}
+
+.width-50{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid palegoldenrod;
+}
+.user{
+    position: absolute;
+    padding-top: 1.2em;
+}
+
+.toggle p{
+    padding-bottom: 0.2em;
+    font-size: large;
+}
+.toggle .intro{
+    font-style: italic;
+    padding-left: 1em;
+}

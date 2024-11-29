@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+{% endblock %}
+{% block form%}
+    <div class="content-container">
+        <!-- to show where it is -- Log in   -->
+        <div class="subtitle">
+            <h1>Sign in</h1>
+        </div>
+        <!-- the log in part -->
+        <div class="login-pane pane">
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <!-- Username -->
+                <div class="form-group">
+                    {{ inputMust(form.username) }}
+                </div>
+                <!-- Password -->
+                <div class="form-group">
+                    {{ inputMust(form.password) }}
+                </div>
+
+                <div class="submit-container">
+                    {{ form.submit }}
+                </div>
+
+            </form>
+        </div>
+        <!-- the part that reminds user of registering -->
+        <p class="note">
+            Don't have an account yet? <a class="notea" href={{ url_for('register') }}>Register now</a>!
+        </p>
+    </div>
+{% endblock %}

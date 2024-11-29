@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block style%}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/profile.css') }}">
+<script src="{{ url_for('static', filename = 'script/profile.js') }}"></script>
+{% endblock %}
+{% block form %}
+
+<div class="content-container" id="edit">
+    <div class="user-container container">
+        {# Edit Button #}
+        <div class="btn">
+            <a href="{{ url_for( 'edit' ) }}">
+                <span class='iconicfill-pen'></span>
+            </a>
+        </div>
+
+        
+        {# User Info #}
+        <div class="user-info">
+            {# Avatar #}
+            {% if avatar %}
+                <a href="{{ avatar }}">
+                    <img src="{{ avatar }}" class="avatar">
+                </a>
+            {% else %}
+                <a href="/static/uploaded_photo/default.jpg">
+                    <img src="/static/uploaded_photo/default.jpg" class="avatar">
+                </a>
+            {% endif %}
+
+            <span class="name" id="{{ user.username }}">Username: {{ user.username }}</span>
+            &emsp;
+            <span class="gender">Gender: {{ profile.gender }}</span>
+            <p>Email: {{ user.email }}</p>
+            <h4>About me:</h4>
+            {# Introduction #}
+            <p>
+                {% if profile.intro %}
+                    {{ profile.intro }}
+                {% else %}
+                    This player is lazy. Doesn't have aboutme.
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+
+    <div class="record-container container">
+        <h3 class="subtitle">Record</h3>
+        <div class="info">
+            <div class="record-info">RATE: <em>{{ user.rate*100 }}%</em></div>
+            <div class="record-info">WIN: <em>{{ user.win }}</em></div>
+            <div class="record-info">LOSE: <em>{{ user.lose }}</em></div>
+            <div class="record-info">DRAW: <em>{{ user.draw }}</em></div>
+        </div>
+        <hr>
+        <div class="record">
+            <table id="record-table">
+                <thead>
+                    <th id="index">Index</th>
+                    <th id="result">Result</th>
+                    <th id="component">Component</th>
+                    <th id="time">Time</th>
+                </thead>
+                {# AJAX to get data  #}
+                <tbody id="tbody">
+                </tbody>
+            </table>
+            {%  if user.win + user.lose + user.draw == 0 %}
+                <div class="hint">
+                    <p>Have a Online Competition!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}

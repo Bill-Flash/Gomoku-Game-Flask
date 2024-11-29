@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{#refer to flask_chess on github by Kechi Zhang#}
+{% block style%}
+<script type="text/javascript" src="static/script/jquery-3.5.1.js" ></script>
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/wuzi.css') }}">
+<script type="text/javascript" src="{{ url_for('static',filename = 'script/rule.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static',filename = 'script/description.js') }}" ></script>
+{% endblock %}
+
+{% block content %}
+<!-- online mode game -->
+
+<div id="gzTitle">
+    <h1>Online Mode</h1>
+</div>
+<div id='main'>
+<div class="left">
+    {#  component description  #}
+    <div id="{{ p }}" class="description">
+        <div class="avatar-container">
+            <img src="{{ profile[0].profile_photo }}" class="avatar">
+        </div>
+        <div class="information-container">
+            <p>Gender: {{ profile[0].gender }}</p>
+            <p>Introduction: {{ profile[0].intro }}</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>WIN:</th>
+                <td>{{ users[0].win }}</td>
+            </tr>
+            <tr>
+                <th>LOSE:</th>
+                <td>{{ users[0].lose }}</td>
+            </tr>
+            <tr>
+                <th>DRAW:</th>
+                <td>{{ users[0].draw }}</td>
+            </tr>
+            <tr>
+                <th>RATE:</th>
+                <td>{{ users[0].rate }}</td>
+            </tr>
+        </table>
+
+
+    </div>
+    <p class="ppl">{{msg|safe}}</p>
+    <br>
+
+</div>
+<div class="divcenter">
+    <div id="background">
+        <!--<div id="back_grid"></div>-->
+        <div id="chess"></div>
+    </div>
+</div>
+<div class="right">
+    <div id="{{ u }}" class="description">
+        <div class="avatar-container">
+            <img src="{{ profile[1].profile_photo }}" class="avatar">
+        </div>
+        <div class="information-container">
+            <p>Gender: {{ profile[1].gender }}</p>
+            <p>Introduction: {{ profile[1].intro }}</p>
+        </div>
+        <table>
+            <tr>
+                <th>WIN:</th>
+                <td>{{ users[1].win }}</td>
+            </tr>
+            <tr>
+                <th>LOSE:</th>
+                <td>{{ users[1].lose }}</td>
+            </tr>
+            <tr>
+                <th>DRAW:</th>
+                <td>{{ users[1].draw }}</td>
+            </tr>
+            <tr>
+                <th>RATE:</th>
+                <td>{{ users[1].rate }}</td>
+            </tr>
+        </table>
+    </div>
+    <p class="ppl">{{message|safe}}</p>
+    <p id="turn" class="ppr"></p>
+    <div class="message">
+        <textarea id="messageContent" disabled="disabled" readonly="readonly"></textarea>
+<!--         <div><input id="message"/> <button onclick="WuZiQi.sendMessage()">发送</button></div>-->
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

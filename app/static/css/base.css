@@ -1,0 +1,184 @@
+/* the icons online, and I can use it directly while it's Internet Connection
+  the url could give you the api I use*/
+@import url(https://weloveiconfonts.com/api/?family=fontelico|iconicfill);
+[class*="fontelico-"]{
+  font-family: 'Fontelico', sans-serif;
+}
+[class*="iconicfill-"]{
+  font-family: 'iconicfill', sans-serif;
+}
+/* make every element to no margin so that adjust easily*/
+*{
+    margin: 0px;
+    font-family: "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+/* to customize the achor for every page based on the base.html*/
+a{
+    text-decoration: none;
+    /*color: black;*/
+}
+li{
+    list-style: none;
+}
+/* the fixed navigation bar at the top for every page */
+header{
+    padding-top: 2px;
+    height: 2.5rem;
+    text-align: center;
+    justify-content: center;
+    top: 0px;
+    position: sticky;
+    border-bottom: 1px solid #2b333e;
+    background-color: rgb(71,72,76);
+    width: 100%;
+    z-index: 100;
+}
+    /* the icon which imported from https://weloveiconfonts.com/api/?family=fontelico*/
+    header .index{
+        margin: 0rem 1rem;
+        padding-bottom: 0.2rem;
+        font-size: 2rem;
+        float: left;
+        color: #c4d7d6;
+        font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+    }
+    header .index:hover{
+        color: #e7f0fd;
+        transition: background 2s;
+    }
+    header .index span{
+        padding-right: 0.3rem;
+    }
+    header .notice{
+        color: #fffefa;
+        float: right;
+        position: relative;
+        font-size: 2rem;
+        font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+
+    }
+    header ul{
+        display: inline;
+        list-style: none;
+        position: relative;
+    }
+    header li{
+        display: none;
+    }
+    header .btn{
+        float: right;
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+    header .up{
+        width: 10rem;
+        color: #fffefa;
+        background-color: #737c7b;
+        border: #c4d7d6 1px solid;
+        border-radius: 5px;
+        -webkit-transition: background .3s;
+        transition: background .3s;
+    }
+    header .up a{
+        color: #e7f0fd;
+    }
+    header .up:hover{
+        background-color: #c4d7d6;
+        color: #2f2f35;
+        cursor: pointer;
+    }
+    header .log{
+        width: 10rem;
+        color: #fffefa;
+        background-color: #737c7b;
+        border: #c4d7d6 1px solid;
+        border-radius: 5px;
+        -webkit-transition: background .3s;
+        transition: background .3s;
+        position: relative;
+        bottom: 35px;
+    }
+    header .log:hover{
+        background-color: #c4d7d6;
+        color: #2f2f35;
+        cursor: pointer;
+    }
+    header .logb{
+        width: 10rem;
+        color: #fffefa;
+        background-color: #737c7b;
+        border: #c4d7d6 1px solid;
+        border-radius: 5px;
+        -webkit-transition: background .3s;
+        transition: background .3s;
+        position: relative;
+        bottom: 2px;
+        right: 5px;
+    }
+    header .logb:hover{
+        background-color: #c4d7d6;
+        color: #2f2f35;
+        cursor: pointer;
+    }
+/*  to show the organization that build this website  */
+footer{
+    text-align: center;
+    color: #fffefa;
+    background-color: rgb(71,75,76);
+    border-top: 5px solid #2b333e;
+    border-radius: 1px;
+    width: 100%;
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    box-shadow: 0 0 2rem rgb(71,75,76);
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+.footer-message{
+    margin-top: 10rem;
+}
+/* the background color and image to render the page*/
+.body{
+    background-image:url('../images/elders.png'), url('../images/tree.png'),
+    url("../images/river.png"), url('../images/mountain.png'),url("../images/flower.png"),
+    url("../images/flower.png"),url("../images/bird.png")
+    ,url("../images/bird.png"),linear-gradient(to top, #fffefa 0%, #74787a 100%);
+    background-size:20%, 25%,  50%,0%, 50%,50%, 15%, 15%, cover;
+    background-position:right bottom, left bottom, right bottom, center, right 10%, 50% 8%, left 10%, right 15%, center 0;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+.body_dark{
+    background-color:#2d2e36;
+    background-size:20%, 25%,  50%,0%, 50%,50%, 15%, 15%, cover;
+    background-position:right bottom, left bottom, right bottom, center, right 10%, 50% 8%, left 10%, right 15%, center 0;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+/* place the flashed message */
+.banner{
+    height: max-content;
+    min-height: 2rem;
+    margin-top: 1rem;
+    background-color: #b89485;
+    border: #918072 solid;
+    border-left: 1px;
+    border-right: 1px;
+}
+    .banner .flash-message{
+        text-align: center;
+        font-size: 1.3rem;
+        color: #4b2e2b;
+        padding: 4px;
+        text-shadow: 0 0 10rem #040e18;
+    }
+/* the basic h1 */
+h1{
+    color: red;
+    clear: both;
+}
+
+
+

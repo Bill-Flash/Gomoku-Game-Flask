@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block style%}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/profile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css') }}">
+{% endblock %}
+
+{% block form %}
+<div class="content-container" id="edit">
+    <div class="user-container container">
+
+        {# User Info #}
+        <div class="user-info edit">
+
+            {# Avatar Form   #}
+            <form action="" method="post" enctype="multipart/form-data" novalidate>
+                <div class="top">
+                {{ aForm.hidden_tag() }}
+                        {#  Avatar      #}
+                        {% if avatar %}
+                            <a href="{{ avatar }}">
+                                <img src="{{ avatar }}" class="avatar">
+                            </a>
+                        {% else %}
+                            <a href="/static/uploaded_photo/default.jpg">
+                                <img src="/static/uploaded_photo/default.jpg" class="avatar">
+                            </a>
+                        {% endif %}
+                    {{ aForm.photo.label }}{{ aForm.photo }}
+                    {% if aForm.photo.errors %}
+                        <p>{{ aForm.photo.errors[0] }}</p>
+                    {% endif %}
+                    <br>
+                    <div class="submit-container">{{ aForm.submit(class='right') }}</div>
+
+                </div>
+            </form>
+            <hr>
+
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <table>
+                    {#  Gender section #}
+                    <div>
+                        <tr>
+                            <th>
+                                {{ form.gender.label }}
+                            </th>
+                            <td>
+                                {% for choice in form.gender %}
+                                    {{ choice }}
+                                    &emsp;
+                                    {{ choice.label }}
+                                    <br>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    </div>
+                    {#  introduction section  #}
+                    <div>
+                        <tr>
+                            <th>
+                                {{ form.intro.label }}
+                            </th>
+                            <td>
+                                {{ form.intro }}
+                            </td>
+                        </tr>
+                    </div>
+                    {#  submit section  #}
+                    <div>
+                        <tr><th colspan="2"><div class="submit-container">{{ form.submit }}</div></th></tr>
+            
+                    </div>
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+</div>    
+
+
+    
+        
+    
+{% endblock %}

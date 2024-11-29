@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block style%}
+<script type="text/javascript" src="static/script/jquery-3.5.1.js"></script>
+<link rel="stylesheet" type="text/css" href="static/css/bar.css"/>
+{% endblock %}
+
+{% block content %}
+<!-- every item of the index page to go to other pages -->
+<div id='main'>
+	<div id="gzTitle">
+		<h1 class="title">Online Mode-Match</h1>
+	</div>
+	<div class="now">
+		<h2 id="nowUser" class="title">There are 0 players now.</h2>
+	</div>
+	<div class="submit-container">
+		{{startFindPlayer|safe}}
+	</div>
+	<div class="now">
+		<h2 id="pending"></h2>
+	</div>
+
+	<script type="text/javascript">
+		function getUser(){
+			$.get("/getNowUser",function(rtnFromSvr){
+				$("#nowUser").html("There are " + rtnFromSvr + " players now." );
+				// console.log(rtnFromSvr);
+			});
+		}
+		setInterval("getUser()",1000);/*get information from the server every 3 seconds*/
+	</script>
+
+	{{pendingjs|safe}}
+
+</div>
+
+{% endblock %}

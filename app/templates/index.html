@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block style%}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- every item of the index page to go to other pages -->
+<div class="indexbg">
+    <p id='itp' class="title">Five-Star Game</p>
+    <a class="indexherf" href="{{ url_for('local') }}" ><div class="indexitem">Local Mode</div></a>
+    <a class="indexherf" href="{{ url_for('online') }}" ><div class="indexitem">Online Mode</div></a>
+    <a class="indexherf" href="{{ url_for('rank') }}" ><div class="indexitem">Ranking List</div></a>
+    <a class="indexherf" href="{{ url_for('intro') }}"><div class="indexitem">Game Introduction</div></a>
+</div>
+
+{% endblock %}

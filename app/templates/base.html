@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/base.css') }}">
+    <script src="{{ url_for('static', filename = 'script/jquery-3.5.1.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'script/base.js') }}"></script>
+    {% block style%} {% endblock %}
+    <title>
+        {% if title %}
+        {{title}} - Five Star Game
+        {% else %}
+        Plase set one!
+        {% endif %}
+    </title>
+    
+</head>
+<body class="body">
+    <!-- the nav bar -->
+    <header>
+        <a href="{{ url_for('index') }}" class="index"><span class='fontelico-spin6 icon'></span>Five Star Game</a>
+        <div class="notice">
+        {% if session.get('USERNAME') %}
+            <div class="btn">
+			    <div class="up">{{ session.get('USERNAME') }}</div>
+                <ul>
+
+                    <a href="{{ url_for('profile') }}"><li class="log">Myself</li></a>
+
+                    <li id="mode" class="log">Dark</li>
+
+                    <a href="{{ url_for('logout') }}"><li class="log">Log Out</li></a>
+
+                </ul>
+            </div>
+        {% else %}
+            <div class="btn">
+			    <div class="up"><a href="{{ url_for('log_on') }}">Sign In</a></div>
+            </div>
+
+        {% endif %}
+        </div>
+    </header>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="banner">
+                        <ul>
+                            <!-- the attention message from the backend to notify the user-->
+                            {% for message in messages %}
+                            <li class="flash-message">Attention: {{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                {% endwith %}
+
+    {# The macro for the form  #}
+    {% macro inputMust(Field, description=None) %}
+        {% if Field.errors %}
+            <strong>{{ Field.label }}</strong><span style="color: red">*</span>
+            <br>
+            {{ Field(class='error') }}
+            <br>
+            {# The warning message shows only one #}
+            <p class="warning">{{ Field.errors[0] }}</p>
+        {% else %}
+            <strong>{{ Field.label -}}</strong><span style="color: red">*</span>
+            <br>
+            {{ Field }}
+        {% endif %}
+    {% endmacro %}
+
+    {# This block for the Post Page to set form easily #}
+    {% block form %}{% endblock %}
+
+    {# This block for the normal page   #}
+    {% block content%}{% endblock %}
+
+    <!-- The part shows who we are -->
+    <div class="footer"></div>
+    <div class="footer-message">
+        <footer>Five Star Company: TEAM 23</footer>
+    </div>
+</body>
+</html>

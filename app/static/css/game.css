@@ -1,0 +1,22 @@
+/* The title div for the page*/
+.subtitle{
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+/* The title for the page*/
+h2{
+    color: #c4d7d6;
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+/* Temporary chessboard*/
+.gamebg{
+    background-image:url('../images/qipan.png');
+    background-size:cover;
+    background-position:center 0;
+    background-repeat:no-repeat;
+    width:500px;
+    height:500px;
+    margin: 10px auto;
+}

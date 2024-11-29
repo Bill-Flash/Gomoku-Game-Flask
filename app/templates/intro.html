@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
+{% endblock %}
+{% block content%}
+<!-- introduction page -->
+<div class="introbg">
+    <div class="intro">
+        <h2 class="introhead">Introduction</h2>
+        <ol>
+            <li class="introh">1. Rules</li>
+            <li class="introbody">
+                The two sides use black and white pieces respectively. Empty board opening.
+                Black first, white, alternate down time, each time only a piece of the chess.
+                The first black piece can be placed at any intersection on the board.
+                Pieces are placed at the intersection of the straight and horizontal lines of the board.
+                The one who forms the line of five pieces first wins.
+            </li>
+            <li class="introh">2. Website</li>
+            <li class="introbody">
+                <strong>2.1 Local Mode</strong>: Two players play on the same computer face to face.
+                No registration required.
+                Results do not count towards the ranklist.
+            </li>
+            <li class="introbody">
+                <strong>2.2 Online Mode</strong>: Players randomly match with other online players in real time.
+                Registration is required.
+                Results count towards the ranklist.
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

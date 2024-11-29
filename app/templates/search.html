@@ -1,0 +1,70 @@
+{% extends 'rank.html' %}
+
+{% block rank %}
+
+<div class="rankbg">
+    <div class="ranklistbg">
+        <!--display target player's wins, losses, winning percentage and ranking-->
+    {% if target %}
+        <table class="ranklist">
+            <thead>
+                <tr class="rankitem">
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Win</th>
+                    <th>Lose</th>
+                    <th>Draw</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for k, v in target.items() %}
+                {% if v[4] == 1 %}
+
+                    <tr class="rankitem1">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% elif v[4] == 2 %}
+                    <tr class="rankitem2">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% elif v[4] == 3 %}
+                        <tr class="rankitem3">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% else %}
+                    <tr class="rankitem">
+                        <td class="rank">{{ v[4] }}</td>
+                        <td class="user"><div class="name">{{ k }}</div></td>
+                        <td class="win">{{ v[0] }}</td>
+                        <td class="lose">{{ v[1] }}</td>
+                        <td class="draw">{{ v[2] }}</td>
+                        <td class="rate">{{ v[3]*100 }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="note">There are no matching users.</p>
+    {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

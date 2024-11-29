@@ -1,0 +1,35 @@
+/*The background 1 of the introduction */
+.introbg{
+    background-color:rgba(45,46,54, 0.3);
+    width:800px;
+    height:max-content;
+    margin: 2rem auto;
+    padding: 1rem;
+
+}
+/*The background 2 of the introduction */
+.intro{
+    background-color:#c4d7d6;
+    width:80%;
+    height:90%;
+    margin: 1rem auto;
+    padding: 30px 30px;
+    border-radius: 10px;
+}
+/*The title of the introduction */
+.introhead{
+    font-size: 50px;
+    text-align: center;
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+/*The subtitle of the introduction */
+.introh{
+    font-size: 40px;
+    font-family: "Lucida Handwriting", "Garamond", "Times New Roman", serif, "Verdana", sans-serif;
+}
+/*The content of the introduction */
+.introbody{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
